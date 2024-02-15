@@ -1,11 +1,11 @@
 <template>
   <div>
     <div v-for="(user, index) in users" :key="index">{{ user.title }}</div>
+    <div>news</div>
   </div>
 </template>
 
 <script>
-import { fetchNewsList } from "../api/index.js";
 export default {
   data() {
     return {
@@ -13,14 +13,18 @@ export default {
     };
   },
   created() {
-    var vm = this;
-    fetchNewsList()
-      .then(function (response) {
-        vm.users = response.data;
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    console.log("start");
+    this.$store.dispatch("FETCH_NEWS");
+    console.log("end");
+
+    // var vm = this;
+    // fetchNewsList()
+    //   .then((response) => {
+    //     vm.users = response.data;
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   });
   },
 };
 </script>
