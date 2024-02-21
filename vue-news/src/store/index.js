@@ -1,18 +1,17 @@
 import { createStore } from "vuex";
-import { fetchNewsList } from "../api/index.js";
+
+import mutations from "./mutations.js";
+import actions from "./actions.js";
 export default createStore({
   state: {
     news: [],
+    jobs: [],
   },
-  actions: {
-    FETCH_NEWS() {
-      fetchNewsList()
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+  getters: {
+    fetchedAsk(state) {
+      return state.ask;
     },
   },
+  mutations,
+  actions,
 });
