@@ -3,6 +3,10 @@
     <div v-for="(job, index) in this.$store.state.jobs" :key="index">
       {{ job.title }}
     </div>
+    <p v-for="(job, index) in this.$store.state.jobs" :key="index">
+      <a href="">{{ job.title }}</a>
+      <small>{{ job.domain }}</small>
+    </p>
   </div>
 </template>
 

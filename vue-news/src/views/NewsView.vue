@@ -1,8 +1,14 @@
 <template>
   <div>
-    <div v-for="(user, index) in this.$store.state.news" :key="index">
-      {{ user.title }}
-    </div>
+    <p v-for="(user, index) in this.$store.state.news" :key="index">
+      <a v-bind:href="item.url">{{ user.title }}</a>
+      <small
+        >{{ item.time_ago }}
+        <router-link v-bind:to="`/user/${item.user}`">{{
+          item.user
+        }}</router-link>
+      </small>
+    </p>
     <div>news</div>
   </div>
 </template>
