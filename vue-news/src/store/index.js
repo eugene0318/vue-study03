@@ -7,10 +7,14 @@ export default createStore({
     news: [],
     jobs: [],
     user: [],
+    item: [],
   },
   getters: {
     fetchedAsk(state) {
       return state.ask;
+    },
+    fetchedItem(state) {
+      return state.item;
     },
   },
   mutations,

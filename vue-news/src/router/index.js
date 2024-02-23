@@ -3,6 +3,7 @@ import NewsView from "../views/NewsView.vue";
 import AskView from "../views/AskView.vue";
 import JobsView from "../views/JobsView.vue";
 import UserView from "../views/UserView.vue";
+import ItemView from "../views/ItemView.vue";
 const routes = [
   {
     path: "/",
@@ -23,6 +24,10 @@ const routes = [
   {
     path: "/user:id",
     component: UserView,
+  },
+  {
+    path: "/item/:id",
+    component: ItemView,
   },
 ];
 
