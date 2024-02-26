@@ -5,10 +5,11 @@
         <div>
           <i class="fas fa-user"></i>
         </div>
-        <div>
+        <div class="user-description">
           <router-link :to="`/user/${fetchedItem.user}`">{{
             fetchedItem.user
           }}</router-link>
+          <div class="time">{{ fetchedItem.time_ago }}</div>
         </div>
       </div>
       <h2>

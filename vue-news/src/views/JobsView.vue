@@ -1,12 +1,29 @@
 <template>
   <div>
-    <div v-for="(job, index) in this.$store.state.jobs" :key="index">
-      {{ job.title }}
-    </div>
-    <p v-for="(job, index) in this.$store.state.jobs" :key="index">
+    <ul class="news-list">
+      <li v-for="(job, index) in this.$store.state.jobs" :key="index">
+        <!-- <a v-bind:href="item.url">
+        {{ item.title }}
+      </a> -->
+        <div>
+          <p class="pints">{{ job.points }}</p>
+          <p class="news-title">
+            <a href="job.url">{{ job.title }}</a>
+          </p>
+          <small class="link-text"
+            >{{ (job, time_ago) }} by
+            <!-- <router-link v-bind:to="`/user/${job.user}`" class="link-text">{{
+              job.domain
+            }}</router-link> -->
+            <a :href="job.url"> {{ job.domain }}</a>
+          </small>
+        </div>
+      </li>
+    </ul>
+    <!-- <p v-for="(job, index) in this.$store.state.jobs" :key="index">
       <a href="">{{ job.title }}</a>
-      <small>{{ job.domain }}</small>
-    </p>
+      <small >{{ job.domain }}</small>
+    </p> -->
   </div>
 </template>
 
