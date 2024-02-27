@@ -5,11 +5,9 @@
     </div>
   </div> -->
   <div>
-    <ul class="news-list">
+    <List-item></List-item>
+    <!-- <ul class="news-list">
       <li v-for="item in fetchedAsk" :key="item.title">
-        <!-- <a v-bind:href="item.url">
-        {{ item.title }}
-      </a> -->
         <div>
           <p class="pints">{{ item.points }}</p>
           <p class="news-title">
@@ -25,43 +23,47 @@
           >
         </div>
       </li>
-    </ul>
+    </ul> -->
   </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+//import { mapGetters } from "vuex";
 // import { fetchAskList } from "../api/index.js";
+import ListItem from "../components/ListItem.vue";
 export default {
-  computed: {
-    ...mapGetters({
-      askItems: "fetchedAsk",
-    }),
-
-    // ask() {
-    //   return this.$store.state;
-    // },
-    // ...mapState({
-    //   ask: (state) => state.ask,
-    // }),
+  components: {
+    ListItem,
   },
+  // computed: {
+  //   ...mapGetters({
+  //     askItems: "fetchedAsk",
+  //   }),
+
+  //   // ask() {
+  //   //   return this.$store.state;
+  //   // },
+  //   // ...mapState({
+  //   //   ask: (state) => state.ask,
+  //   // }),
+  // },
   // data() {
   //   return {
   //     ask: [],
   //   };
   // },
-  created() {
-    this.$store.dispatch("FETCH_ASK");
-    // console.log("start");
-    // var vm = this;
-    // fetchAskList()
-    //   .then(function (response) {
-    //     vm.ask = response.data;
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   });
-  },
+  // created() {
+  //   this.$store.dispatch("FETCH_ASK");
+  //   // console.log("start");
+  //   // var vm = this;
+  //   // fetchAskList()
+  //   //   .then(function (response) {
+  //   //     vm.ask = response.data;
+  //   //   })
+  //   //   .catch(function (error) {
+  //   //     console.log(error);
+  //   //   });
+  // },
 };
 </script>
 
