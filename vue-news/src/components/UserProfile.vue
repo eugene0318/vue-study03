@@ -4,12 +4,22 @@
       <i class="fas fa-user"></i>
     </div>
     <div class="user-description">
-      <div>{{ info.id. }}</div>
+      <slot name="username"> </slot>
+      <!-- <div>username : {{ info.id }}</div> -->
 
+      <!-- <template v-if="this.$route.name === 'item'">
+        <div>username : {{ info.id. }}</div>
+      </template>
+
+      <template v-else>{{ info.user }}</template> -->
       <!-- <router-link :to="`/user/${userInfo.user}`">
         {{ userInfo.user }}
       </router-link> -->
-      <div class="time">{{ info.created }}</div>
+      <div class="time">
+        <slot name="time"></slot>
+        <!-- time : {{ info.created }} -->
+      </div>
+      <slot name="karma"></slot>
     </div>
   </div>
 </template>

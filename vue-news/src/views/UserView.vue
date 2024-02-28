@@ -1,6 +1,10 @@
 <template lang="">
   <div>
-    <user-profile :info="userInfo"></user-profile>
+    <user-profile :info="userInfo">
+      <div slot="username">{{ userInfo.id }}</div>
+      <span slot="time">{{ userInfo.created }}, </span>
+      <span slot="karma">{{ userInfo.about }}</span>
+    </user-profile>
     <!-- <p>{{ userInfo.id }}</p>
     <p>{{ userInfo.karma }}</p>
     <p>{{ userInfo.created }}</p>
