@@ -1,6 +1,6 @@
 <template>
   <div>
-    <List-item></List-item>
+    <list-item></list-item>
   </div>
 </template>
 
@@ -11,7 +11,8 @@ export default {
   components: {
     ListItem,
   },
-
   mixins: [Listmixn],
 };
 </script>
+
+<style></style>

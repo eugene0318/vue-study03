@@ -48,13 +48,14 @@ export default {
   },
   computed: {
     listItem() {
-      if (name == "news") {
-        return this.$store.state.news;
-      } else if (name == "ask") {
-        return this.$store.state.ask;
-      } else if (name == "jobs") {
-        return this.$store.state.jobs;
-      }
+      return this.$store.state.list;
+      // if (name == "news") {
+      //   return this.$store.state.news;
+      // } else if (name == "ask") {
+      //   return this.$store.state.ask;
+      // } else if (name == "jobs") {
+      //   return this.$store.state.jobs;
+      // }
     },
   },
 };
