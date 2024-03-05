@@ -26,11 +26,15 @@
 import ListItem from "../components/ListItem.vue";
 
 //import { fetchJobsList } from "../api/index.js";
-import Listmixn from "../mixins/ListMixin";
+//import Listmixn from "../mixins/ListMixin"
+import bus from "@/utils/bus";
 export default {
   components: { ListItem },
-
   mixins: [Listmixn],
+  // mounted() {
+  //   bus.$emit("end:spinner");
+  // },
+  //mixins: [Listmixn],
   // data() {
   //   return {
   //     jobs: [],

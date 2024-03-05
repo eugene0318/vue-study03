@@ -31,24 +31,31 @@
 //import { mapGetters } from "vuex";
 // import { fetchAskList } from "../api/index.js";
 import ListItem from "../components/ListItem.vue";
+import bus from "@/utils/bus";
+//import Listmixn from "../mixins/ListMixin";
 export default {
   components: {
     ListItem,
   },
-  created() {
-    bus.$emit("start:spinner");
-    setTimeout(() => {
-      this.$store
-        .dispatch("FETCH_ASK")
-        .then(() => {
-          console.log("fetched");
-          bus.$emit("end:spinner");
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }, 3000);
-  },
+  mixins: [Listmixn],
+  // mounted() {
+  //   bus.$emit("end:spinner");
+  // },
+  // mixins: [Listmixn],
+  // created() {
+  //   bus.$emit("start:spinner");
+  //   setTimeout(() => {
+  //     this.$store
+  //       .dispatch("FETCH_ASK")
+  //       .then(() => {
+  //         console.log("fetched");
+  //         bus.$emit("end:spinner");
+  //       })
+  //       .catch((error) => {
+  //         console.log(error);
+  //       });
+  //   }, 3000);
+  // },
   // computed: {
   //   ...mapGetters({
   //     askItems: "fetchedAsk",

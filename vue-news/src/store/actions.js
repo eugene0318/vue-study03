@@ -49,10 +49,11 @@ export default {
         console.log(error);
       });
   },
-  FETCH_LISt({ commit }, name) {
-    fetchList(name)
-      .then(({ data }) => {
-        commit("SET_LIST", data);
+  FETCH_LISt({ commit }, pageName) {
+    return fetchList(pageName)
+      .then((response) => {
+        commit("SET_LIST", response.data);
+        return response.data;
       })
       .catch((error) => {
         console.log(error);
